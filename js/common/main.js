@@ -9,7 +9,8 @@ requirejs.config({
         bootstrap:'lib/bootstrap/js/bootstrap.min',
         // 自己写的路径配置
         userList: 'js/user/list',
-        userProfile: 'js/user/profile'
+        userProfile: 'js/user/profile',
+        common:'js/common/main'
     },
     shim:{
         bootstrap:{
@@ -19,7 +20,7 @@ requirejs.config({
 });
 
 //加载模块
-require(['jquery','bootstrap']);
+require(['jquery','bootstrap','common']);
 
 /*
  *这里获取页面的pathname，然后对应的加载js。
