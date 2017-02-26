@@ -10,7 +10,7 @@ requirejs.config({
         // 自己写的路径配置
         userList: 'js/user/list',
         userProfile: 'js/user/profile',
-        common:'js/common/main'
+        common:'js/common/common'
     },
     shim:{
         bootstrap:{
