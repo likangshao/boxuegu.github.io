@@ -20,6 +20,7 @@ define(['jquery','jqueryCookie'],function($,undefined){
     var userInfo=null;
     try{
         userInfo= JSON.parse($.cookie('userInfo'));
+
     }catch(e){
         userInfo={};
     }

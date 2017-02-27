@@ -17,7 +17,7 @@ define(['jquery','jqueryCookie'], function($,undefined) {
 			},*/
 			success: function(data) {
 				if(data.code===200){
-					$.cookie('userInfo',JSON.stringify(data.result),{paths:'/'});
+					$.cookie('userInfo',JSON.stringify(data.result),{path:'/'});
 					location.href='/';
 				}
 			}
