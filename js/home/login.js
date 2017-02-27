@@ -11,6 +11,10 @@ define(['jquery','jqueryCookie'], function($,undefined) {
 			type: 'post',
 			//将数据序列化
 			data: $(this).serialize(),
+			/*data: {
+				tc_name:$('#form-login input:first').val(),
+				tc_pass:$('#form-login input:last').val()
+			},*/
 			success: function(data) {
 				if(data.code===200){
 					$.cookie('userInfo',JSON.stringify(data.result),{paths:'/'})
