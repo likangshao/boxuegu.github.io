@@ -46,9 +46,9 @@ require(['jquery','bootstrap','common']);
         var sessID= $.cookie('PHPSESSID');
         //µÇÂ¼Ç°×÷ÅÐ¶Ï
         if(pathname==='/html/home/login.html' && sessID){
-            pathname='/';
+            location.href='/';
         }else if(pathname!=='/html/home/login.html' && !sessID){
-            pathname='/html/home/login.html';
+            location.href='/html/home/login.html';
         }
 
         switch(pathname) {
