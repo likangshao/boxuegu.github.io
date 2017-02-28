@@ -7,6 +7,10 @@ define(['jquery','jqueryCookie'],function($,undefined){
         $(this).next().stop().slideToggle();
     });
 
+    //侧栏选择到当前的标签的定位
+    var pathname= window.location.pathname;
+    $('.navs a').removeClass('active').filter('[href="'+pathname+'"]').addClass('active').parents('ul').show();
+
     //退出登录
     $('#logout').on('click',function(){
         $.post('/v6/logout', function(data) {
