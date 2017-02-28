@@ -1,4 +1,4 @@
-define(['jquery','jqueryCookie'], function($,undefined) {
+define(['jquery','jqueryCookie','nprogress'], function($,undefined,nprogress) {
 
 	//用户退出登录时，把历史登录的头像获取到登录界面
 	var userInfo=null;
@@ -34,4 +34,6 @@ define(['jquery','jqueryCookie'], function($,undefined) {
 		});
 		return false;
 	})
+
+	nprogress.done();
 });

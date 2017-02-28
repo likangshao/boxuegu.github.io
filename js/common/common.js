@@ -2,6 +2,15 @@
  * Created by likangshao on 2017/2/26.
  */
 define(['jquery','jqueryCookie'],function($,undefined){
+
+    //添加页面的loading事件
+    $(document).ajaxStart(function(){
+        console.log('加载中');
+        $('.overlay').show();
+    }).ajaxStop(function(){
+        $('.overlay').hide();
+    })
+
     //左侧导航下拉列表
     $('.navs .list-unstyled .nav a').on('click',function(){
         $(this).next().stop().slideToggle();
