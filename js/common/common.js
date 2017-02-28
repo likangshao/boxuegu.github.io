@@ -30,7 +30,7 @@ define(['jquery','jqueryCookie'],function($,undefined){
     }
 
     //将用户信息展示到侧栏
-    $('.aside .profile h4').html(userInfo.tc_name? userInfo.tc_name: '没有名字哦');
+    $('.aside .profile h4').html(userInfo.tc_name? userInfo.tc_name: '你的名字我的姓氏');
     $('.aside .profile img').attr('src', userInfo.tc_avatar? userInfo.tc_avatar: '/img/default.png');
 
 })
