@@ -1,9 +1,9 @@
 define(['jquery', 'common', 'nprogress','template'], function($, undefined, nprogress,template) {
 
-	// ¸ÃÒ³ËùÓĞµÄjs¼ÓÔØÍê±Ï£¬½ø¶ÈÌõ½áÊø¡£
+	// è¯¥é¡µæ‰€æœ‰çš„jsåŠ è½½å®Œæ¯•ï¼Œè¿›åº¦æ¡ç»“æŸã€‚
 	nprogress.done();
 
-	//äÖÈ¾½²Ê¦ÁĞ±í
+	//æ¸²æŸ“è®²å¸ˆåˆ—è¡¨
 	$.get('/v6/teacher',function(data){
 		if(data.code==200){
 			var html=template('teacher-list-tpl',{list:data.result});
@@ -11,15 +11,18 @@ define(['jquery', 'common', 'nprogress','template'], function($, undefined, npro
 		}
 	});
 
-	//Í¨¹ıÊÂ¼şÎ¯ÍĞµÄ·½Ê½¸ø¶¯Ì¬Éú³ÉµÄa±êÇ©°ó¶¨µã»÷ÊÂ¼ş£¬
-	//È»ºó»ñÈ¡½²Ê¦µÄÏêÏ¸ĞÅÏ¢²¢Õ¹Ê¾
-	$('#teacher-list-tbody').on('click','teacher-view',function(){
+	//é€šè¿‡äº‹ä»¶å§”æ‰˜çš„æ–¹å¼ç»™åŠ¨æ€ç”Ÿæˆçš„aæ ‡ç­¾ç»‘å®šç‚¹å‡»äº‹ä»¶ï¼Œ
+	//ç„¶åè·å–è®²å¸ˆçš„è¯¦ç»†ä¿¡æ¯å¹¶å±•ç¤º
+	$('#teacher-list-tbody').on('click','.teacher-view',function(){
+		console.log('è·å–å‰');
 		$.get('/v6/teacher/view',{
 			tc_id:$(this).parent().attr('data-id')
 		},function(data){
+			console.log('è·å–å');
 			if(data.code==200){
-				var html=template('teacher-list-tpl',data.result);
+				var html=template('teacher-view-tpl',data.result);
 				$('#teacherModal').html(html);
+				console.log('å±•ç¤º');
 			}
 		})
 	})

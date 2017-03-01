@@ -5,7 +5,6 @@ define(['jquery','jqueryCookie'],function($,undefined){
 
     //添加页面的loading事件
     $(document).ajaxStart(function(){
-        console.log('加载中');
         $('.overlay').show();
     }).ajaxStop(function(){
         $('.overlay').hide();
